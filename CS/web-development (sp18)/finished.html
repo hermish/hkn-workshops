@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Naman Priyadarshi</title>
+  </head>
+  <body>
+    <h1>Name: Naman Priyadarshi</h1>
+    <img style="width:100px;" src="namanbear.jpg"></img><br>
+    <input type="button" value="Like!" onclick="increment();" />
+    <input type="button" value="Change Color!" onclick="switchColor();" />
+    <p>Number of Likes: </p><p id="demo">0</p>
+    <p id="test">I will change colors</p>
+    <h2>Student at UC Berkeley</h2>   
+    <h2>Hobbies</h2>
+    <ul>
+        <li>Tennis</li>
+        <li>Programming</li>
+        <li id="secret">--secret--</li>
+    </ul>
+    <input type="button" value="Show Me the Secret!" onclick="showSecret();" />
+    <script>
+        var i = 0;
+        function increment() {
+            i++;
+            document.getElementById("demo").innerHTML = i;
+        }
+        function switchColor() {
+            document.getElementById("test").style.color = "blue";
+        }
+        function showSecret() {
+            document.getElementById("secret").innerHTML = "I won't tell you my secret. :P";
+        }
+    </script>
+  </body>
+</html>
