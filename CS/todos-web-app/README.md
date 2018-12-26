@@ -1,0 +1,4 @@
+- Explain Elm and Web Apps
+- Step-by-step instructions and explanations
+- Step-by-step solution chunks
+- Finished solution code (Elm & HTML)
