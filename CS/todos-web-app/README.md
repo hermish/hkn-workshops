@@ -144,9 +144,10 @@ Elm Web Apps are built in **three parts**, together comprising the so-called *El
 ### Part 1: The Model
 
 > Note: The code we're starting out with WILL NOT COMPILE or FUNCTION until later parts.
+>
 > Note: You may ignore the code within the "HTML" section, for the purposes of this lab.
 
-Let's start with the **model**. We want to define a data structure (like a list or a record) which can be used to represent the state of our web app. For example, when watching a YouTube video, the video can either be "Playing" or "Paused". This is the kind of state we wish to capture in our model.
+Let's start with the **model**. We want to define a data structure (like a list or a record) which can be used to represent the state of our web app. For example, when watching a YouTube video, the video can either be "Playing" or "Paused". This is the kind of state we wish to capture in our model. In our case we are trying to represent a todo list.
 
 Let's start by writing the following, under the `-- MODEL` comment:
 
@@ -158,11 +159,11 @@ type alias Item =
     { id : Int, content : String }
 ```
 
-This `Item` type will be used to represent instances of **items** in the todo list of your "Todos" web app. Every `Item` must have an `id` number (for identification within our app) and some `content` which is the String that makes up the text of a given todo list item.
+This `Item` **type** will be used to represent various **items** in the todo list of your "Todos" web app. Every `Item` must have an `id` number (for identification within our app) and some `content` which is the String that makes up the text of a given todo list item.
 
 > Wait... what is a type?
 
-Types organize data in programs into well defined categories or types. Types have very specific rules defining how they flow through the program and how   they interact with other types. Some types you might know: `Int` for numbers like `1`, `2`, and `3`; `String` for representing text such as `"Hello, world!"`; or, `Bool` for the values `True` and `False`. Notice that `Int` + `Int` makes sense... But `Bool` + `String` does not. Types ensure our code makes sense and works!
+Types organize data (such as our todo list items) in programs into well defined categories or types. Types have very specific rules defining how they flow through the program and how they interact with other types. Here are some types you might know: `Int` for numbers like `1`, `2`, and `3`; `String` for representing text such as `"Hello, world!"`; or, `Bool` for the values `True` and `False`. Notice that `Int` + `Int` makes sense... But `Bool` + `String` does not. Types ensure our code makes sense and actually works!
 
 Likewise, we define the `Model` type as follows:
 
@@ -173,7 +174,7 @@ type alias Model =
     }
 ```
 
-Here, `items` is a list of `Item`s. This list holds on the todo items that our web app cares about.
+Here, `items` is a `List` of `Item`s. This list will be used to hold all the todo items that our web app cares about.
 
 The `newItemContent` is the String of text that will be used when adding a new todo list `Item` to our list of todo items.
 
@@ -186,7 +187,7 @@ init =
 
 Your code should look like this now:
 
-**Code Checkpoint #1**
+**-- Code Checkpoint #1 --**
 
 ```
 module Main exposing (main)
@@ -234,6 +235,8 @@ In the **update** part we do two things.
 
 First, we define a `Msg` (or message) type. This will be used to define all possible reasons for the state of our app (or the **model**) to change. For example, if a user of our web app clicks an "add new item" button, that would cause a new item to be added to our app, thus, our app's state must change.
 
+Here is the type definition for `Msg`:
+
 ```
 type Msg
     = EditNewItem String
@@ -242,7 +245,7 @@ type Msg
     | DeleteItem Item
 ```
 
-So our app can receive the above defined "messages", such as, `AddNewItem String` which means: *Add a new item with this String as the text content for that item.*
+So, our app can receive the above defined "messages", such as, `AddNewItem String` which means: *Add a new item with this String as the text content for that item.*
 
 Secondly, we will work on our **update** function.
 
@@ -279,11 +282,11 @@ update msg model =
             { model | items = List.filter (\x -> x /= item) model.items }
 ```
 
-The `update` function takes in `msg`s (a.k.a. messages) and the current state of the app (a.k.a. the `model`). Based on what the `msg` is, the update function will have a different behavior--a behavior for each possible kind of `msg` (we defined these in the previous code block). Thus, the `update` function is able to return a **new model** with the necessary changes to the state of the app, appropriate to the given `msg`. For example, if the update function is given a `msg` of `DeleteItem `, the update function will return a new model with a specific item removed from the `items` of the model.
+The `update` function takes in `msg`s (a.k.a. messages) and the current state of the app (a.k.a. the `model`). Based on what the `msg` is, the update function will have a different behavior—a behavior for each possible kind of `msg` (we defined these in the previous code block). Thus, the `update` function is able to return a **new model** with the necessary changes to the state of the app, appropriate to the given `msg`. For example, if the update function is given a `msg` of `DeleteItem`, the update function will return a new model with a specific item removed from the `items` of the model.
 
 So, for the `AddNewItem` branch, we want to produce a new model from the old one, such that, the new model's list of todo items called `items` includes a brand new item with the String `newContent` as this brand new item's text content.
 
-If you can't quite get it, we must do this:
+The correct solution is this:
 
 ```
     AddNewItem newContent ->
@@ -294,7 +297,7 @@ If you can't quite get it, we must do this:
             }
 ```
 
-**Code Checkpoint #2**
+**-- Code Checkpoint #2 --**
 
 ```
 module Main exposing (main)
@@ -380,7 +383,7 @@ update msg model =
 
 So, we have a way to *model* our app and *update* that model... But now, we will finally learn how to **view** our Todos web app!
 
-The `view` function takes in a `model` and turns it into HTML code that the browser can display to the user! We don't have time you HTML right now, but check out the following code block and add it to your program!
+The `view` function takes in a `model` and turns it into HTML code that the browser can display to the user! We don't have the time to teach HTML right now, but check out the following code block and add it to your program!
 
 ```
 -- VIEW
@@ -407,20 +410,20 @@ listItems items =
 
 ```
 
-As you can see, the view function turns a `model` into an a bunch of HTMl elements (`h1`, `ul`, `li`, etc) all wrapped in a `div` element.
+As you can see, the view function turns a `model` into an a bunch of HTML elements (`h1`, `ul`, `li`, etc) all wrapped in a `div` element.
 
 > Fun fact: These HTML elements here, are actually just functions that return HTML types!
 
-What's really interesting is that the HTML can produce `Msg`s! Look at these line in particular:
+What's really interesting is that the HTML can produce `Msg`s! Look at these lines in particular:
 
 ```
                         [ button
                             [ onClick (AddNewItem model.newItemContent) ]
 ```
 
-This means that when a user clicks on the HTML button element produced by the view function and shown in the web browser, it will produce a `Msg` of `AddNewItem`! This is how our update function actually recieves `msg`s, and how the web app proceeds to work!
+This means that when a user **clicks** on the HTML button element produced by the view function and shown in the web browser, it will produce an `AddNewItem` message of type `Msg`! This `AddNewItem` message will be fed into our `update` function... this is how our update function actually recieves `msg`s, and how the web app keeps driving forward!
 
-Now all you must do is tap on the **COMPILE** button on the top of the editor. Try out your brand new web app! Does everything work!?
+Now all you must do is click on the **COMPILE** button on the top of the editor and try out your brand new Todos web app! Does everything work!?
 
 > If you did get an error, read it carefuly and try to fix things! Then hit **COMPILE** again!
 
@@ -428,7 +431,7 @@ Now all you must do is tap on the **COMPILE** button on the top of the editor. T
 
 Below, is the finished code! And [here](https://ellie-app.com/4gWNjVCN76ga1) is a functioning demo, just in case! Well done!
 
-**Code Checkpoint #3**
+**-- Code Checkpoint #3 --**
 
 ```
 module Main exposing (main)
@@ -537,3 +540,4 @@ listItems items =
 - Try to make your Todos app able to add `Item`s by pressing the ENTER key on the keyboard instead of only being able to do so by pressing the **+** button
 - Learn how to style our app with your own [CSS](https://www.w3schools.com/css)
 - Learn [HTML](https://www.w3schools.com/html/default.asp) and how it makes the web work
+- Challenge: there is actually a small bug in this web app... can you find it and squash it?
