@@ -537,7 +537,8 @@ listItems items =
 
 - Check out the official Elm guide [here](https://guide.elm-lang.org)
 - Learn more about Elm in general [here](https://elm-lang.org)
-- Try to make your Todos app able to add `Item`s by pressing the ENTER key on the keyboard instead of only being able to do so by pressing the **+** button
 - Learn how to style our app with your own [CSS](https://www.w3schools.com/css)
 - Learn [HTML](https://www.w3schools.com/html/default.asp) and how it makes the web work
+- Challenge: try to make your Todos app able to add `Item`s by pressing the ENTER key on the keyboard instead of only being able to do so by pressing the **+** button.
 - Challenge: there is actually a small bug in this web app... can you find it and squash it?
+- Challenge: make your own Elm app! Get creative!
