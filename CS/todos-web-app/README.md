@@ -22,7 +22,7 @@ Now, for your information, Elm is a functional statically typed language. That j
 
 Use `--` to create a comment. Comments are completely ignored when code is run, but they are useful as "notes to self".
 
-```
+```elm
 -- I am a comment. I will be ignored by the computer.
 ```
 
@@ -30,7 +30,7 @@ Use `--` to create a comment. Comments are completely ignored when code is run, 
 
 Below are some Strings, representing snippets of text. Strings must be surrounded by quotation marks!
 
-```
+```elm
 > "I am a string."
 "I am a string."
 
@@ -40,7 +40,7 @@ Below are some Strings, representing snippets of text. Strings must be surrounde
 
 Math works too.
 
-```
+```elm
 > 2 + 3 * 4
 14
 
@@ -60,7 +60,7 @@ Functions are simple yet powerful programming abstractions that let you model an
 
 For now, lets make a simple function `isNeg` that takes in some number and tells you whether it is negative or not.
 
-```
+```elm
 > isNeg x = x < 0
 <function>
 ```
@@ -69,7 +69,7 @@ We can read the above code as: *Define a function called "isNeg" which takes in 
 
 Here is the function in action:
 
-```
+```elm
 > isNeg 4
 False
 
@@ -79,7 +79,7 @@ True
 
 There are also *anonymous* functions or *unnamed* functions. Above, we created the function `isNeg` and gave it the name "isNeg". Let's make the same function again, but this time, without the name!
 
-```
+```elm
 > \x -> x < 0
 <function>
 ```
@@ -90,7 +90,7 @@ We can read the above code as: *Here is a unnamed function that takes in a numbe
 
 If you want conditional behavior, use if expressions, like so:
 
-```
+```elm
 > perc = 85
 > if perc >= 90 then "A" else if perc >= 80 then "B" else if perc >= 70 then "C" else if perc >= 60 then "D" else "F"
 "B"
@@ -100,7 +100,7 @@ If you want conditional behavior, use if expressions, like so:
 
 You can also create lists!
 
-```
+```elm
 > words = [ "hello", "bye", "3" ]
 [ "hello", "bye", "3" ]
 
@@ -112,7 +112,7 @@ You can also create lists!
 
 A record is a set of **keys** and their associated **values**. You can create them like so:
 
-```
+```elm
 > bill = { name = "Gates", age = 62 }
 { age = 62, name = "Gates" }
 ```
@@ -121,14 +121,14 @@ Here, `name` is a key with value `"Gates"`. And, `age` is a key too, with value 
 
 Do the following, to access the value of specific keys from within a record:
 
-```
+```elm
 > bill.name
 "Gates"
 ```
 
 We can also create new records from existing records, like so:
 
-```
+```elm
 > youngBill = { bill | age = 24 }
 { age = 24, name = "Gates" }
 ```
@@ -151,7 +151,7 @@ Let's start with the **model**. We want to define a data structure (like a list 
 
 Let's start by writing the following, under the `-- MODEL` comment:
 
-```
+```elm
 -- MODEL
 
 
@@ -167,7 +167,7 @@ Types organize data (such as our todo list items) in programs into well defined 
 
 Likewise, we define the `Model` type as follows:
 
-```
+```elm
 type alias Model =
     { newItemContent : String
     , items : List Item
@@ -180,7 +180,7 @@ The `newItemContent` is the String of text that will be used when adding a new t
 
 Lastly, we must **initialize** our model:
 
-```
+```elm
 init =
     Model "" []
 ```
@@ -189,7 +189,7 @@ Your code should look like this now:
 
 **-- Code Checkpoint #1 --**
 
-```
+```elm
 module Main exposing (main)
 
 import Browser
@@ -237,7 +237,7 @@ First, we define a `Msg` (or message) type. This will be used to define all poss
 
 Here is the type definition for `Msg`:
 
-```
+```elm
 type Msg
     = EditNewItem String
     | AddNewItem String
@@ -251,7 +251,7 @@ Secondly, we will work on our **update** function.
 
 Below, is an incomplete update function. You must fill in the `???`s under the `AddNewItem` branch to get the update function working.
 
-```
+```elm
 update msg model =
     case msg of
         EditNewItem newContent ->
@@ -288,7 +288,7 @@ So, for the `AddNewItem` branch, we want to produce a new model from the old one
 
 The correct solution is this:
 
-```
+```elm
     AddNewItem newContent ->
             { model
                 | items =
@@ -299,7 +299,7 @@ The correct solution is this:
 
 **-- Code Checkpoint #2 --**
 
-```
+```elm
 module Main exposing (main)
 
 import Browser
@@ -385,7 +385,7 @@ So, we have a way to *model* our app and *update* that model... But now, we will
 
 The `view` function takes in a `model` and turns it into HTML code that the browser can display to the user! We don't have the time to teach HTML right now, but check out the following code block and add it to your program!
 
-```
+```elm
 -- VIEW
 
 
@@ -416,7 +416,7 @@ As you can see, the view function turns a `model` into an a bunch of HTML elemen
 
 What's really interesting is that the HTML can produce `Msg`s! Look at these lines in particular:
 
-```
+```elm
                         [ button
                             [ onClick (AddNewItem model.newItemContent) ]
 ```
@@ -433,7 +433,7 @@ Below, is the finished code! And [here](https://ellie-app.com/4gWNjVCN76ga1) is 
 
 **-- Code Checkpoint #3 --**
 
-```
+```elm
 module Main exposing (main)
 
 import Browser
