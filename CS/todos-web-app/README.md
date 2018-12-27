@@ -1,22 +1,22 @@
 # Making a Simple "Todos" Web App using Elm
 
-Welcome! This lab is recommended for those who have a little programming experience, though if you do not have any, do this lab anyway and just be sure to ask plenty of questions! This Lab will teach you how to make a simple "Todos" web application (similar to Apple Notes or Google Keep) using a programming language called *Elm*. Along the way, you'll learn a lot about programming, programming paradigms, (web) application design and development, and by the end you'll have a working prototype. These lessons will help you along in your EECS career!
+Welcome! This lab will teach you how to make a simple "Todos" web application (similar to Apple Notes or Google Keep) using a programming language called *Elm*. It make get tough at times, so be sure to ask for help! Along the way, you'll learn a lot about programming, programming paradigms, (web) application design and development, and by the end you'll have a working prototype. These lessons will help you along in your EECS career!
 
 > Wait, what is a web app?
 
-A **web app** is just a computer application which users access through the web. For example: Gmail, Amazon, or Instagram. With web apps the user-interface (the web app's buttons and search bars) and client-side logic (the web app's behavior) is run on the user's browser. It is this, user-interface and client-side logic that we will be constructing today!
+A **web app** is just a computer application which users access through the web. For example: Gmail, Amazon, or Instagram. With web apps the user-interface (the web app's buttons and search bars) and client-side logic (the web app's behavior) is run on the user's browser. It is this user-interface and client-side logic, that we will be constructing today!
 
 > Okay, what is Elm?
 
 [Elm](https://elm-lang.org/) is a programming language like Python or Java, except it compiles to (or "turns into and runs as") JavaScript, so it can be run in the browser!
 
-Elm is specifically designed to make user-interface centric applications, as such, using it in this lab will teach you many useful techniques programmers leverage when making large and complex software. Elm boasts excellent performance ([significantly better](https://elm-lang.org/blog/blazing-fast-html-round-two) than React) and perfect reliability (promising zero runtime errors). If those details don't mean anything to you, that's fine... just keep moving!
+Elm is specifically designed for building user-interface centric applications, as such, using it in this lab will teach you many useful techniques programmers leverage when making large and complex software. Elm boasts excellent performance ([significantly better](https://elm-lang.org/blog/blazing-fast-html-round-two) than React) and perfect reliability (promising zero runtime errors). If those details don't mean anything to you, that's fine... just keep moving!
 
-## Introduction to Elm
+## Programming in Elm
 
-Now, for your information, Elm is a functional statically typed language. That means it is a bit different than other languages you may be familiar with. Never fear, just follow along! And, feel free to refer back to here if you need to while you are coding!
+Now, for your information, Elm is a functional statically typed language. That just means it is a bit different (better?) than other languages you may be familiar with. Never fear, just follow along! And, feel free to refer back to the followin section if you need to while you are coding!
 
-> Note: Many examples below are taken from [here](https://guide.elm-lang.org/core_language.html)
+> Note: Many examples below are taken from [here](https://guide.elm-lang.org/core_language.html).
 
 ### Comments
 
@@ -56,7 +56,7 @@ Math works too.
 
 ### Functions
 
-Functions are simple yet powerful programming abstractions that let you model and modularize data flow... but, just think of them as little tools that do specific things. You can imagine, that if you have enough of these "little tools", you put many of them together to achieve more powerful things--that is why functions are great!
+Functions are simple yet powerful programming abstractions that let you model and modularize data flow... but, just think of them as little tools that do specific things. You can imagine, that if you have enough of these "little tools", you can put many of them together to achieve more powerful things—that is why functions are great!
 
 For now, lets make a simple function `isNeg` that takes in some number and tells you whether it is negative or not.
 
@@ -110,14 +110,14 @@ You can also create lists!
 
 ### Lastly, Records
 
-A record is a set of **keys** and their associated **values**. You can use them like so:
+A record is a set of **keys** and their associated **values**. You can create them like so:
 
 ```
 > bill = { name = "Gates", age = 62 }
 { age = 62, name = "Gates" }
 ```
 
-Here, `name` is a key with value `"Gates"`. And, `age` is a key too, with value `62`.
+Here, `name` is a key with value `"Gates"`. And, `age` is a key too, with value `62`. Both are part of the same record, designated as `bill`.
 
 Do the following, to access the value of specific keys from within a record:
 
@@ -129,7 +129,7 @@ Do the following, to access the value of specific keys from within a record:
 We can also create new records from existing records, like so:
 
 ```
-> youngBill = {bill | age = 24}
+> youngBill = { bill | age = 24 }
 { age = 24, name = "Gates" }
 ```
 
@@ -137,7 +137,7 @@ Records, as you might guess, can be extremely useful in representing the various
 
 ## Okay! Time to start coding!
 
-Now, let's head over to our [Ellie editor](https://ellie-app.com/4gX4GySfXZza1) (Elm's quick and useful online coding playground). This is where you'll be doing your coding for this lab. There will be a lot of code that doesn't really make sense all over the place... Unfortunately, there is not enough time now to explain how everything works! We recommend you just edit the parts of code that this lab guides your through. Though, if you want to experiment, there will be **code checkpoints** throughout the lab that contain all the "correct" code. At the end of the lab, we'll show you where to go learn more!
+Now, let's head over to our [Ellie editor](https://ellie-app.com/4gX4GySfXZza1) (Elm's quick and useful online coding playground). This is where you'll be doing your coding for this lab. There will be a lot of code that doesn't really make sense all over the place... Unfortunately, there is not enough time now to explain how everything works! We recommend you just edit the parts of code that this lab guides your through. Though, if you want to experiment, there will be **code checkpoints** throughout the lab that contain all the "correct" code. You can use these to "reset" in case you think you messed up. At the end of the lab, we'll show you where to go learn more!
 
 Elm Web Apps are built in **three parts**, together comprising the so-called *Elm Architecture*. It is a powerful way to capture and simplify the complexity of coding a web app. Getting experience with this approach to coding will surely help you as you engage in future programming endeavors.
 
@@ -420,6 +420,10 @@ What's really interesting is that the HTML can produce `Msg`s! Look at these lin
 
 This means that when a user clicks on the HTML button element produced by the view function and shown in the web browser, it will produce a `Msg` of `AddNewItem`! This is how our update function actually recieves `msg`s, and how the web app proceeds to work!
 
+Now all you must do is tap on the **COMPILE** button on the top of the editor. Try out your brand new web app! Does everything work!?
+
+> If you did get an error, read it carefuly and try to fix things! Then hit **COMPILE** again!
+
 ## That's a wrap!
 
 Below, is the finished code! And [here](https://ellie-app.com/4gWNjVCN76ga1) is a functioning demo, just in case! Well done!
@@ -528,5 +532,8 @@ listItems items =
 
 ## Want to learn more?
 
-- Learn more about Elm [here](https://elm-lang.org)
 - Check out the official Elm guide [here](https://guide.elm-lang.org)
+- Learn more about Elm in general [here](https://elm-lang.org)
+- Try to make your Todos app able to add `Item`s by pressing the ENTER key on the keyboard instead of only being able to do so by pressing the **+** button
+- Learn how to style our app with your own [CSS](https://www.w3schools.com/css)
+- Learn [HTML](https://www.w3schools.com/html/default.asp) and how it makes the web work
