@@ -1,0 +1,47 @@
+<html>
+<head>
+  <style>
+    body {
+      margin: 2rem 1rem;
+      font-family: sans-serif;
+    }
+    h1 {
+      margin-left: 3rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 18px;
+    }
+    ul > li > button {
+      width: 2.5rem;
+      padding: 0.5rem;
+      border-radius: 100%;
+      border: 1px solid white;
+      outline: 0;
+      background: #F2F2F2;
+      font-size: inherit;
+    }
+    ul > li > input {
+      margin-left: 0.5rem;
+      width: 18rem;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      border: 0;
+      outline: 0;
+      background: #F2F2F2;
+      font-size: inherit;
+    }
+
+    ul > li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <main></main>
+  <script>
+    var app = Elm.Main.init({ node: document.querySelector('main') })
+  </script>
+</body>
+</html>
