@@ -1,6 +1,6 @@
 # Making a Simple "Todos" Web App using Elm
 
-Welcome! This lab will teach you how to make a simple "Todos" web application (similar to Apple Notes or Google Keep) using a programming language called *Elm*. It make get tough at times, so be sure to ask for help! Along the way, you'll learn a lot about programming, programming paradigms, (web) application design and development, and by the end you'll have a working prototype. These lessons will help you along in your EECS career!
+Welcome! This lab will teach you how to make a simple "Todos" web application (similar to Apple Notes or Google Keep) using a programming language called *Elm*. It may get tough at times, so be sure to ask for help! Along the way, you'll learn a lot about programming, programming paradigms, (web) application design and development, and by the end you'll have a working prototype. These lessons will help you along in your EECS career!
 
 > Wait, what is a web app?
 
