@@ -422,7 +422,7 @@ This means that when a user clicks on the HTML button element produced by the vi
 
 ## That's a wrap!
 
-Below, is the finished code! And (here)[https://ellie-app.com/4gWNjVCN76ga1] is a functioning demo, just in case! Well done!
+Below, is the finished code! And [here](https://ellie-app.com/4gWNjVCN76ga1) is a functioning demo, just in case! Well done!
 
 **Code Checkpoint #3**
 
