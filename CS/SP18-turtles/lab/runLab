@@ -1,0 +1,13 @@
+#!/bin/bash
+
+export PATH="$HOME/miniconda/bin:$PATH"
+source $HOME/miniconda/bin/activate
+mkdir temp
+cp EECS_Day_CS_Lab.ipynb temp/EECS_Day_CS_Lab.ipynb
+cp python-logo.png temp/python-logo.png
+cp toolbar.png temp/toolbar.png
+cp turtle-start.png temp/turtle-start.png
+cd temp
+jupyter notebook EECS_Day_CS_Lab.ipynb
+cd ..
+rm -rf temp
