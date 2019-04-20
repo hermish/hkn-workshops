@@ -5,6 +5,4 @@ dependencies:
   - numpy
   - pandas
   - matplotlib
-  - seaborn
-  - turtle
-  
+  - seaborn  
