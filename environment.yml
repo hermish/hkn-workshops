@@ -2,5 +2,4 @@ name: workshop-environment
 dependencies:
   - IPython
   - ipywidgets
-  - mobilechelonian
   
