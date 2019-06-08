@@ -1,4 +1,4 @@
-name: workshop-environment
+name: data-visualization-environment
 channels:
   - conda-forge
 dependencies:

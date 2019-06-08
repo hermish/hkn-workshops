@@ -1,4 +1,4 @@
-name: workshop-environment
+name: turtle-environment
 dependencies:
   - IPython
   - ipywidgets
