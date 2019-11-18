@@ -1,0 +1,5 @@
+name: turtle-environment
+dependencies:
+  - IPython
+  - ipywidgets
+  
