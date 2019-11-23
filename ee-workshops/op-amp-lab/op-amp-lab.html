@@ -1,0 +1,787 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@font-face {
+  font-family: octicons-anchor;
+  src: url(https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.woff) format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    color:#333;
+    background:#fff;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .select::-ms-expand {
+  opacity: 0;
+}
+
+.markdown-body .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h1 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h3 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h5 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body h6 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #333;
+}
+
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+
+.markdown-body .pl-k {
+  color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #183691;
+}
+
+.markdown-body .pl-v {
+  color: #ed6a43;
+}
+
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .plan-price-unit {
+  color: #767676;
+  font-weight: normal;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.35em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body .plan-choice {
+  padding: 15px;
+  padding-left: 40px;
+  display: block;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  font-weight: normal;
+  background-color: #fafafa;
+}
+
+.markdown-body .plan-choice.open {
+  background-color: #fff;
+}
+
+.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+  display: block;
+}
+
+.markdown-body .plan-choice-free {
+  border-radius: 3px 3px 0 0;
+}
+
+.markdown-body .plan-choice-paid {
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.markdown-body .plan-choice-radio {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+.markdown-body .plan-choice-exp {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.markdown-body .plan-choice-seat-breakdown {
+  margin-top: 10px;
+  display: none;
+}
+
+.markdown-body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+
+@media print {
+  body .markdown-body {
+    padding: 0;
+    border: none;
+  }
+}
+</style><title>op-amp-lab</title></head><body><article class="markdown-body"><h1>
+<a id="user-content-welcome-to-the-op-amp-lab" class="anchor" href="#welcome-to-the-op-amp-lab" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to the Op Amp Lab!</h1>
+<p>Prerequisites: working understanding of voltage, current and resistors in circuits.</p>
+<p>Credit to EE 16A for some of these resources.</p>
+<h2>
+<a id="user-content-what-are-op-amps" class="anchor" href="#what-are-op-amps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What are Op Amps?</h2>
+<p>Operational amplifiers, or op amps for short, are important components in analog circuits. The circuit symbol for an op amp and an example op amp package is shown below:</p>
+<p><a href="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/op_amp_circuit_symbol.png" target="_blank" rel="noopener noreferrer"><img src="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/op_amp_circuit_symbol.png" width="300" style="max-width:100%;"></a> <a href="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/op_amp_ex_package.jpg" target="_blank" rel="noopener noreferrer"><img src="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/op_amp_ex_package.jpg" width="300/" style="max-width:100%;"></a></p>
+<p>Op amps perform the function of amplifying the difference between the inputs of its 2 terminals; we’ll call these inputs V+ and V-. The output voltage can be represented as a function of these two:</p>
+<p><a href="https://camo.githubusercontent.com/d0bf0069d98f8f780b3354c81cc275fc692ee92a/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f253543696e6c696e65253230253234253234565f2537426f7574253744253230253344253230415f76253238565f2b2532302d253230565f2d253239253234253234" target="_blank" rel="nofollow"><img src="https://camo.githubusercontent.com/d0bf0069d98f8f780b3354c81cc275fc692ee92a/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f253543696e6c696e65253230253234253234565f2537426f7574253744253230253344253230415f76253238565f2b2532302d253230565f2d253239253234253234" alt="equation" data-canonical-src="https://latex.codecogs.com/gif.latex?%5Cinline%20%24%24V_%7Bout%7D%20%3D%20A_v%28V_+%20-%20V_-%29%24%24" style="max-width:100%;"></a></p>
+<p>This gain A<sub>v</sub> is built into the op amp, meaning we don’t have direct control over it. But most times this amount of gain is not desirable, so in order to control the output gain V<sub>out</sub>/V<sub>in</sub>, we configure the circuit into feedback. There are two main configurations of negative feedback: non-inverting and inverting.</p>
+<p>The non-inverting amplifier:</p>
+<p><a href="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/noninverting_amplifier.png" target="_blank" rel="noopener noreferrer"><img src="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/noninverting_amplifier.png" width="300" style="max-width:100%;"></a></p>
+<p><a href="https://camo.githubusercontent.com/b44f318a58e8e1eab4896b3d2279450454802dbd/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f253543696e6c696e65253230565f2537426f75742537442532302533442532302535436c656674253238312b25354366726163253742525f31253744253742525f322537442532302535437269676874253230253239565f253742696e253744" target="_blank" rel="nofollow"><img src="https://camo.githubusercontent.com/b44f318a58e8e1eab4896b3d2279450454802dbd/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f253543696e6c696e65253230565f2537426f75742537442532302533442532302535436c656674253238312b25354366726163253742525f31253744253742525f322537442532302535437269676874253230253239565f253742696e253744" alt="equation" data-canonical-src="https://latex.codecogs.com/gif.latex?%5Cinline%20V_%7Bout%7D%20%3D%20%5Cleft%281+%5Cfrac%7BR_1%7D%7BR_2%7D%20%5Cright%20%29V_%7Bin%7D" style="max-width:100%;"></a></p>
+<p>The inverting amplifier:</p>
+<p><a href="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/inverting_amplifier.png" target="_blank" rel="noopener noreferrer"><img src="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/inverting_amplifier.png" width="300/" style="max-width:100%;"></a></p>
+<p><a href="https://camo.githubusercontent.com/19df9377d683c187e6a0302e5ff45668cfa0f999/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f253543696e6c696e65253230253234253234565f2537426f75742537442532302533442532302d25354366726163253742525f32253744253742525f31253744565f253742696e253744253234253234" target="_blank" rel="nofollow"><img src="https://camo.githubusercontent.com/19df9377d683c187e6a0302e5ff45668cfa0f999/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f253543696e6c696e65253230253234253234565f2537426f75742537442532302533442532302d25354366726163253742525f32253744253742525f31253744565f253742696e253744253234253234" alt="equation" data-canonical-src="https://latex.codecogs.com/gif.latex?%5Cinline%20%24%24V_%7Bout%7D%20%3D%20-%5Cfrac%7BR_2%7D%7BR_1%7DV_%7Bin%7D%24%24" style="max-width:100%;"></a></p>
+<p>We won’t go over how to derive these equations; circuit analysis is not in the scope of this lab. If you’re curious about where they come from, you can find out more by visiting: </p>
+<p>As seen in the equations for non-inverting and inverting amplifiers, by appropriately choosing the values of R<sub>1</sub> and R<sub>2</sub> we can set the gain of our circuit. We will use this fact while building the circuit for today’s lab.</p>
+<h1>
+<a id="user-content-motivating-examples" class="anchor" href="#motivating-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Motivating Examples</h1>
+<p>Op-amps are used in a variety of circuits. If you ever want to multiply a voltage or flip its sign, you can use an op-amp to do that.</p>
+<h2>
+<a id="user-content-breadboard-overview" class="anchor" href="#breadboard-overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Breadboard Overview</h2>
+<p>Breadboards have a series of holes that are connected internally so that you can easily prototype circuits using them. Just as a quick reminder from the first imaging lab, there are two types of connected lines in a breadboard - power rails, and internal rows. Power rails (blue and red, marked by the + and - signs) are connected to each other vertically as shown here:</p>
+<p><a href="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/bb_intro_1.png" target="_blank" rel="noopener noreferrer"><img src="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/bb_intro_1.png" height="300" style="max-width:100%;"></a></p>
+<p>The rows (in the center part of the breadboard) are numbered from 1 to 30 and are electrically connected across the row. Note: they are not connected across the center divider! This makes it very easy to plug op-amps (like you will be using later in this lab) into the breadboard - just place them so that they straddle the notch in the center of the board!</p>
+<p><a href="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/bb_intro_2.png" target="_blank" rel="noopener noreferrer"><img src="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/bb_intro_2.png" height="300" style="max-width:100%;"></a></p>
+<p>You can see these connections for yourselves! Take a look at the pictures below and follow them to open up the back of your breadboard to see the conductive wires. Please be careful when taking it apart; the metal pieces can fall out so if you do not want to risk losing pieces, do not do this.</p>
+<h1>
+<a id="user-content-comparator" class="anchor" href="#comparator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Comparator</h1>
+<p>Let’s see how an op-amp can compare two voltages. Here’s a diagram that illustrates how the LMC6482 chips work:</p>
+<p><a href="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/op_amp_pin_out.png" target="_blank" rel="noopener noreferrer"><img src="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/op_amp_pin_out.png" width="300" style="max-width:100%;"></a></p>
+<p>As mentioned above, a comparator will take in 2 input voltages and compare them to determine the voltage output. In the case of our op amp, these two inputs will be our V+ and V- terminals. The circuit you should build on the breadboard is shown as follows:</p>
+<p><a href="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/op_amp_comparator.jpg" target="_blank" rel="noopener noreferrer"><img src="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/op_amp_comparator.jpg" width="400" style="max-width:100%;"></a></p>
+<p>As we have not adjusted the gain through feedback, this means that we will have close to a gain of 100k! The op amp will try to output 100000(V<sub>+</sub> - V<sub>-</sub>), but since we give it a maximum supply of V<sub>DD</sub>, it can only output up to V<sub>DD</sub>. It “railed”, so to speak.</p>
+<p>Now that you have built the circuit, connect 5V to VDD of the op amp, and ground (0V) to the VSS of the op amp. Next, connect V- to ground, and V+ to the output of your waveform generator. We want to set the output load of the waveform generator to Hi-Z. To do so, do the following:</p>
+<p>Push the button labelled with the channel number you are using (it should be right above where you plugged in the cable to the waveform generator).
+Push the button underneath the screen that corresponds to the box labelled “Output load” on the screen.</p>
+<p>Push the button corresponding to the box labelled “Hi-Z” on the screen.
+We won’t go into why we want to do this, as that knowledge is not necessary and is beyond the scope of this lab.</p>
+<p>Next, we need to set the output waveform. Push the button labelled “Waveforms”, and set the waveform to be a triangle wave. Then, push the button labelled Parameters, and set the following parameters:</p>
+<p>Vpp (voltage peak to peak) should be 5V.
+Frequency should be 50Hz.
+Offset should be 0V.</p>
+<p>To turn on the output, push the button with the channel number again, and toggle the output by pushing the button underneath the screen corresponding to the output. You should now see that the LED is blinking! This is because as the waveform’s voltage goes above V-, which is set to 0V, the comparator op amp will see that V+ &gt; V-, and therefore output VDD, turning the LED on. When the waveform goes below 0V, V+ &lt; V-, and the op amp will output VSS (0V), turning the LED off.</p>
+<p>Congratulations! You have implemented a basic op amp comparator circuit! We’ll now be moving on to a slightly more complicated circuit, the non-inverting amplifier, using a photoresistor to control the gain.</p>
+<h2>
+<a id="user-content-photoresistor-non-inverting-amplifier" class="anchor" href="#photoresistor-non-inverting-amplifier" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Photoresistor Non-inverting Amplifier</h2>
+<p>So now we have seen negative feedback amplifiers in theory and comparators in practice. Let's see if we can put what we've learned together with some photo-reactive elements (elements that are impacted by light) to build an interesting amplifier.</p>
+<p><a href="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/op_amp_circuit.jpg" target="_blank" rel="noopener noreferrer"><img src="/Users/Rami/Documents/HKN/hkn-workshops/ee-workshops/op-amp-lab/Images/op_amp_circuit.jpg" width="400" style="max-width:100%;"></a></p>
+<h4>
+<a id="user-content-photoresistors" class="anchor" href="#photoresistors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Photoresistors</h4>
+<p>Photoresistors are variable resistors that change their resistance value with different light intensities. The photoresistors we will be using vary from 50<a href="https://camo.githubusercontent.com/1c3a29f51b2b8d8dd7448a4c695d0e3ca30154c0/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f253543696e6c696e652532302535434f6d656761" target="_blank" rel="nofollow"><img src="https://camo.githubusercontent.com/1c3a29f51b2b8d8dd7448a4c695d0e3ca30154c0/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f253543696e6c696e652532302535434f6d656761" alt="equation" data-canonical-src="https://latex.codecogs.com/gif.latex?%5Cinline%20%5COmega" style="max-width:100%;"></a> to 100k<a href="https://camo.githubusercontent.com/1c3a29f51b2b8d8dd7448a4c695d0e3ca30154c0/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f253543696e6c696e652532302535434f6d656761" target="_blank" rel="nofollow"><img src="https://camo.githubusercontent.com/1c3a29f51b2b8d8dd7448a4c695d0e3ca30154c0/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f253543696e6c696e652532302535434f6d656761" alt="equation" data-canonical-src="https://latex.codecogs.com/gif.latex?%5Cinline%20%5COmega" style="max-width:100%;"></a>.</p>
+</article></body></html>
